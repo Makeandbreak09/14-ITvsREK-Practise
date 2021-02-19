@@ -23,7 +23,11 @@ public class JustAClass {
      * @return
      */
     public int sumUpIt(int n){
-        return 0;
+        int o = 0;
+        for(int i = 1; i<=n; i++){
+            o+=i;
+        }
+        return o;
     }
 
     /**
@@ -33,7 +37,11 @@ public class JustAClass {
      * @return
      */
     public int sumUpRek(int n){
-        return 0;
+        if(n>1) {
+            return n + sumUpRek(n - 1);
+        }else{
+            return 1;
+        }
     }
 
     /**
@@ -43,7 +51,11 @@ public class JustAClass {
      * @return
      */
     public int sumUpRandomIt(int n){
-        return 0;
+        int o = 0;
+        for(int i = 0; i<n; i++){
+            o+=(int)(Math.random()*6+1);
+        }
+        return o;
     }
 
     /**
@@ -53,7 +65,11 @@ public class JustAClass {
      * @return
      */
     public int sumUpRandomRek(int n){
-        return 0;
+        if(n>0) {
+            return (int) (Math.random() * 6 + 1) + sumUpRandomRek(n - 1);
+        }else{
+            return 0;
+        }
     }
 
     /**
@@ -63,7 +79,14 @@ public class JustAClass {
      * @return die größte zufällig Zahl, die im Verlauf der Methode erstellt wurde.
      */
     public int biggestOfRandomIt(int n){
-        return -1;
+        int o = -1;
+        for(int i = 0; i<n; i++){
+            int p = (int)(Math.random()*6+1);
+            if(o<p){
+                o=p;
+            }
+        }
+        return o;
     }
 
     /**
@@ -73,6 +96,14 @@ public class JustAClass {
      * @return die größte zufällig Zahl, die im Verlauf der Methode erstellt wurde.
      */
     public int biggestOfRandomRek(int n){
-        return -1;
+        int o = -1;
+        if(n>0) {
+            o = biggestOfRandomRek(n - 1);
+            int p = (int) (Math.random() * 6 + 1);
+            if(o<p){
+                o=p;
+            }
+        }
+        return o;
     }
 }
