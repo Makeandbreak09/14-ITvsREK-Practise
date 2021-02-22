@@ -53,7 +53,7 @@ public class JustAClass {
     public int sumUpRandomIt(int n){
         int o = 0;
         for(int i = 0; i<n; i++){
-            o+=(int)(Math.random()*6+1);
+            o+=getRandom();
         }
         return o;
     }
@@ -66,7 +66,7 @@ public class JustAClass {
      */
     public int sumUpRandomRek(int n){
         if(n>0) {
-            return (int) (Math.random() * 6 + 1) + sumUpRandomRek(n - 1);
+            return getRandom() + sumUpRandomRek(n - 1);
         }else{
             return 0;
         }
@@ -81,7 +81,7 @@ public class JustAClass {
     public int biggestOfRandomIt(int n){
         int o = -1;
         for(int i = 0; i<n; i++){
-            int p = (int)(Math.random()*6+1);
+            int p = getRandom();
             if(o<p){
                 o=p;
             }
@@ -99,11 +99,17 @@ public class JustAClass {
         int o = -1;
         if(n>0) {
             o = biggestOfRandomRek(n - 1);
-            int p = (int) (Math.random() * 6 + 1);
+            int p = getRandom();
             if(o<p){
                 o=p;
             }
         }
         return o;
+    }
+
+    public int fib(int n){
+        if(n==0 || n==1)    return n;
+        else if(n>1)        return fib(n-1)+fib(n-2);
+        return -1;
     }
 }

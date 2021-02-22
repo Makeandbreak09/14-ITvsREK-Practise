@@ -15,5 +15,10 @@ public class MainProgram {
 
         System.out.println("Die Größte von 10 zufälligen ganzen Zahlen zwischen 1 und 6-Iterativ: "+ jc.biggestOfRandomIt(10));
         System.out.println("Die Größte von 10 zufälligen ganzen Zahlen zwischen 1 und 6-Rekursiv: "+ jc.biggestOfRandomRek(10));
+
+        System.out.println("Die Fibunacci-Zahlenfolge: ");
+        for(int i = 0; i<=10; i++) {
+            System.out.println(jc.fib(i));
+        }
     }
 }
